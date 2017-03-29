@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Icon Generator</title>
+	<style type="text/css" href="style/style.css"></style>
+</head>
+<body>
+<header></header>
+<section>
+	<div>
+		<img class="circle" width="30%" height="30%" src="images/circle-02.svg">
+		<img class='squer' width="10%" height="10%" src="images/circleobject.svg">
+		<img class='circle2' width="10%" height="10%" src="images/circlecolorstroke.svg">
+		<img class='circle3' width="10%" height="10%" src="images/circle_with_shadow.svg">
+	</div>
+</section>
+<section>
+<canvas id="canvas" width="800" height="800"></canvas>
+
+
+
+<p>Choose fill color:
+	<input id="color" value="FFFFFF" class="jscolor {width:101, padding:0, shadow:false,
+    borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}"> </p>
+
+<p>Choose stroke color:
+	<input id="stroke" value="FFFFFF" class="jscolor {width:101, padding:0, shadow:false,
+    borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}"> </p>
+
+    <p id="shadow"><button type="button">Set shadow</button></p>
+
+
+<a id="download"><button type="button">Download</button></a>
+<a id="remove"><button type="button">Remove selected object</button></a>
+<a id="clear"><button type="button">Clear canvas</button></a>
+
+
+
+
+</section>
+<footer>
+</footer>
+
+</body> 
+<script src="js/jscolor.js"></script>
+<script type="text/javascript" src="fabric.js-1.7.9/dist/fabric.js"></script>
+<script type="text/javascript" src="js/canvas2svg.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "szablon1",
+  "description": "",
+  "main": "gulpfile.js",
+  "license": "ISC",
+  "homepage": "https://github.com/agatacanert/WPTemplate-executiveWeb",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "slider": "^1.0.1",
+    "font-awesome": "^4.7.0",
+    "jquery-ui": "^1.12.1",
+    "bootstrap": "bootstrap4#^3.3.7"
+  }
+}
