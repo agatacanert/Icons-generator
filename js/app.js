@@ -1,17 +1,17 @@
 
 var canvas = new fabric.Canvas('canvas');
 
-window.addEventListener('resize', resizeCanvas, false);
-var draw = document.querySelector(".main");
+// window.addEventListener('resize', resizeCanvas, false);
+// var draw = document.querySelector(window);
 
-  function resizeCanvas() {
-    canvas.setHeight(draw.innerHeight);// problem
-    canvas.setWidth(draw.innerWidth);
-    canvas.renderAll();
-  }
+//   function resizeCanvas() {
+//     canvas.setHeight(window.innerHeight);// problem
+//     canvas.setWidth(window.innerWidth);
+//     canvas.renderAll();
+//   }
 
-  // resize on init
-  resizeCanvas();
+//   // resize on init
+//   resizeCanvas();
 
 
 // funkcja odpwiedzialna za nadawanie wpełnienia z colorpickera
