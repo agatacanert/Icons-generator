@@ -1,6 +1,19 @@
 
 var canvas = new fabric.Canvas('canvas');
 
+window.addEventListener('resize', resizeCanvas, false);
+var draw = document.querySelector(".main");
+
+  function resizeCanvas() {
+    canvas.setHeight(draw.innerHeight);// problem
+    canvas.setWidth(draw.innerWidth);
+    canvas.renderAll();
+  }
+
+  // resize on init
+  resizeCanvas();
+
+
 // funkcja odpwiedzialna za nadawanie wpełnienia z colorpickera
 function setImageColor(element) {
 
@@ -20,27 +33,36 @@ function setStrokeColor(element) {
 	
   		color = "#"+element.value;
   		var obj = canvas.getActiveObject();
+  		var src = obj.src;
+  		console.log(src);
+  		fabric.loadSVGFromURL( src , function(objects, options) {
+	  for(i in objects) {
+	  objects[i].set({
+	    strokeWidth: 8,
+	    stroke: color
+	  });
+	}
+});
 		
 
-		obj.stroke = color;
-		obj.strokeWidth = 10; 
-		console.log(obj);
+		// obj.stroke = color;
+		// obj.strokeWidth = 10; 
+		// console.log(obj);
   		canvas.renderAll();
 }
 
 
 document.addEventListener('DOMContentLoaded',function(){
 
-var circle = document.querySelector(".circle");
-var squer = document.querySelector(".squer");
-var circle2 = document.querySelector(".circle2");
-var circle3 = document.querySelector(".circle3");
+var shapes =Array.from(document.querySelectorAll(".shapes div img"));
+console.log(shapes);
 
 
-
-
-circle.addEventListener("click", function(){
-fabric.loadSVGFromURL('http://localhost/GENERATOR%20IKONEK/images/circle-02.svg', function(objects, options) {
+// loading elements to canvas
+shapes.forEach(function(e){
+e.addEventListener("click", function(){
+	var src = e.src;
+fabric.loadSVGFromURL( src, function(objects, options) {
  var obj = fabric.util.groupSVGElements(objects, options);
  
  //console.log(typeof(jscolor));
@@ -51,6 +73,7 @@ fabric.loadSVGFromURL('http://localhost/GENERATOR%20IKONEK/images/circle-02.svg'
         .center() // Centers it (no s**t, Sherlock)
         .setCoords();
  canvas.setActiveObject(obj).renderAll();
+});
 });
 });
 
@@ -79,58 +102,35 @@ stroke.addEventListener('change', function()
 
 
 
-
-squer.addEventListener("click", function(){
-fabric.loadSVGFromURL('http://localhost/GENERATOR%20IKONEK/images/circleobject.svg', function(objects, options) {
-  var jscolor = document.querySelector("#stroke").value;
-  console.log(jscolor);
-  for(i in objects) {
-  objects[i].set({
-    strokeWidth: 8,
-    stroke: "#"+jscolor
-  });
-}
-  var obj = fabric.util.groupSVGElements(objects, options);
-  var jscolor = document.querySelector("#stroke").value;
-  console.log(jscolor);
- // obj.set({  fill: jscolor });
-  canvas.add(obj).renderAll();
-});
-});
-
-circle2.addEventListener("click", function(){
-	fabric.loadSVGFromURL('http://localhost/GENERATOR%20IKONEK/images/circlecolorstroke.svg', function(objects, options) {
-	  for(i in objects) {
-	  objects[i].set({
-	    strokeWidth: 8,
-	    stroke: 'rgb(200,0,0)'
-	  });
-	}
-	  var obj = fabric.util.groupSVGElements(objects, options);
-	  var jscolor = document.querySelector("#color").value;
-	  console.log(jscolor);
-	 // obj.set({  fill: jscolor });
-	  canvas.add(obj).renderAll();
+	// Przesuwanie elementu na wierzch
+	var front = document.getElementById("front");
+	front.addEventListener("click", function(){
+		var object = canvas.getActiveObject();
+		canvas.bringToFront(object);
 	});
-});
 
-circle3.addEventListener("click", function(){
-	fabric.loadSVGFromURL('http://localhost/GENERATOR%20IKONEK/images/circle_with_shadow.svg', function(objects, options) {
-	  var jscolor = document.querySelector("#stroke").value;
-	  console.log(jscolor);
-	  for(i in objects) {
-	  objects[i].set({
-	    strokeWidth: 8,
-	    stroke: "#"+jscolor
-	  });
-	}
-	  var obj = fabric.util.groupSVGElements(objects, options);
-	  var jscolor = document.querySelector("#color").value;
-	  console.log(jscolor);
-	 // obj.set({  fill: jscolor });
-	  canvas.add(obj).renderAll();
+	// przesówanie elementu na spód
+	var back = document.getElementById("back");
+	back.addEventListener("click", function(){
+		var object = canvas.getActiveObject();
+		canvas.sendToBack(object);
 	});
-});
+	// odbice lustrzane w poziomie elementu
+	var reflectH = document.getElementById("reflectH");
+	reflectH.addEventListener("click", function(){
+		var object = canvas.getActiveObject();
+		object.set("angle", "-180").set('flipY', true).center();
+		canvas.renderAll();
+	});
+
+	// odbice lustrzane w pionie elementu
+	var reflectV = document.getElementById("reflectV");
+	reflectV.addEventListener("click", function(){
+		var object = canvas.getActiveObject();
+		object.set("angle", "-180").set('flipX', true).center();
+		canvas.renderAll();
+	});
+
 	// pobieranie elementu do svg za pomocą buttona
 		var download = document.getElementById("download");
 		download.addEventListener("click", function(){
@@ -160,11 +160,22 @@ circle3.addEventListener("click", function(){
 
 
 		//dodawanie cienia 
-		var shadow = document.getElementById("shadow"); 
-		shadow.addEventListener("click", function(){
+		var shadowAdd = document.getElementById("shadow_add"); 
+		shadowAdd.addEventListener("click", function(){
 			var obj = canvas.getActiveObject();
 			console.log(obj);
-			obj.setShadow(" 10px 10px 8px rgba(0, 0, 0, 0.4)");
+			obj.setShadow(" 5px 5px 5px rgba(0, 0, 0, 0.4)");
+				  canvas.add(obj).renderAll();
+
+		});
+
+
+		//usuwanie cienia 
+		var shadowRem = document.getElementById("shadow_rem"); 
+		shadowRem.addEventListener("click", function(){
+			var obj = canvas.getActiveObject();
+			console.log(obj);
+			obj.setShadow("0");
 				  canvas.add(obj).renderAll();
 
 		});

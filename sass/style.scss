@@ -1,9 +1,88 @@
 //@import '../bower_components/bootstrap/less/bootstrap.less';
 
 body {
-    background-color: green;
+	
+	margin: 0 auto;
 }
 
-#canvas {
-    border: 1px solid black;
+.full_screan{
+	height: 100vh;
 }
+
+header {
+    background-color: rgb( 25, 25, 25);
+    height:45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    	img{
+    		height: 40px; 
+    		width: auto;
+    		padding: 3px 0;
+
+    	}
+    	nav {
+    		a{
+    		text-decoration: none;
+    		color: white;
+    		padding: 0 15px;
+
+    		}
+    	}
+
+}
+input {
+	display: block;
+}
+
+.types {
+	background-color: rgb(30, 30, 30);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 50px;
+		a{
+			text-decoration: none; 
+			color: white; 
+			paddding-right: 30px;
+		}
+}
+
+.shapes{
+	padding: 20px 10px;
+		.basic_shapes{
+				img{
+					border-radius: 50%;
+					border: 0.5px solid black;
+					padding:15px;
+				}
+		}
+}
+
+.main{
+	display: flex;
+	align-items: strech;
+	height: 100%; 
+	
+		.settings{
+			padding: 50px 10px;
+			width:15%;
+		}
+		.draw{
+		width:85%;
+		height: auto;
+		margin: 15px;
+		
+		}
+	
+		
+		
+
+}
+
+
+
+.canvas-container { 
+	 flex-grow:1;
+}
+
