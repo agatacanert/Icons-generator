@@ -3,10 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>Icon Generator</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css"><link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
-<div class="full_screan">
+
 <header>
 		<img src="images/logo.svg">
 		<nav>
@@ -14,7 +14,7 @@
 			<a href="">CONTACT</a>
 		</nav>
 </header>
-<section>
+<section class="top">
 	<div class="types">
 		<a href="">BASIC SHAPES</a>
 		<a href="">NATURE</a>
@@ -37,38 +37,35 @@
 <section class="main">
 	<div class="settings">
 	<label>Choose fill color:</label>
-		<input id="color" value="FFFFFF" class="jscolor {width:101, padding:0, shadow:false,
+		<input id="color" value="FFFFFF" class="jscolor { shadow:false,
 	    borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}">
 
 	<label>Choose stroke color:</label>
-		<input id="stroke" value="FFFFFF" class="jscolor {width:101, padding:0, shadow:false,
+		<input id="stroke" value="FFFFFF" class="jscolor { shadow:false,
 	    borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}"> 
 
-	    <p>
+	   
 	    	<a id="shadow_add"><button type="button">Set shadow</button></a>
 	    	<a id="shadow_rem"><button type="button">Remove shadow</button></a>
-	    </p>
-	    <p>
+	    
+	    
 	    	<a id="front"><button>Bring to front</button></a>
 	    	<a id="back"><button>Send to back</button></a>
-	    </p>
-	    <p>
+	    
+	    
 	    	<a id="reflectH"><button type="button">Reflectn horizontal</button></a>
 	    	<a id="reflectV"><button type="button">Reflectn vertical</button></a>
-	    </p>
-
-	<p>
-		<a id="download"><button type="button">Download</button></a>
-		<a id="remove"><button type="button">Remove selected object</button></a>
-	</p>
-	<a id="clear"><button type="button">Clear canvas</button></a>
+		
+			<a id="clear"><button type="button">Clear canva</button></a>
+			<a id="remove"><button type="button">Remove selected object</button></a>
+			<a id="download"><button type="button">Download</button></a>
 	</div>
 	<div class="draw">
-		<canvas id="canvas"></canvas>
+		<canvas id="canvas" height="500px" width="1100px"></canvas>
 	</div>
 </section>
-</div>
 <footer>
+<p>CREATED BY AGATA CANERT | 2017</p>
 </footer>
 
 </body> 

@@ -3,6 +3,7 @@
 body {
 	
 	margin: 0 auto;
+	font-family: 'Lato', sans-serif;
 }
 
 
@@ -12,6 +13,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-weight: bsemibold;
+    letter-spacing: 2px;
     	img{
     		height: 40px; 
     		width: auto;
@@ -28,30 +31,42 @@ header {
     	}
 
 }
+
+
 input {
 	display: block;
 }
 
 .types {
-	background-color: rgb(150, 150, 160);
+	background-color: rgb(13, 251, 251);
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	height: 50px;
 		a{
 			text-decoration: none; 
-			color: white; 
+			color: black; 
 			paddding-right: 30px;
+			font-weight: semibold;
+			letter-spacing: 2px;
 		}
 }
 
 .shapes{
 	padding: 20px 10px;
+	
+	
 		.basic_shapes{
 				img{
 					border-radius: 50%;
-					border: 0.5px solid black;
 					padding:15px;
+					background-color:white;
+					margin: 5px 20px;
+					box-shadow: 1px 2px 12px -5px #242424;
+					-webkit-box-shadow: 1px 2px 12px -5px #242424;
+					-moz-box-shadow: 1px 2px 12px -5px #242424;
+					-o-box-shadow: 1px 2px 12px -5px #242424;
+
 				}
 		}
 }
@@ -60,15 +75,19 @@ input {
 	display: flex;
 	align-items: start;
 	height: 100%; 
-	background-color: rgb(170, 170, 180);
+	background-color: white;
+	box-shadow: inset 0px 0px 44px 0px #ABABAB;
+	-webkit-box-shadow: inset 0px 0px 44px 0px #ABABAB;
+	-moz-box-shadow: inset 0px 0px 44px 0px #ABABAB;
+	-o-box-shadow: inset 0px 0px 44px 0px #ABABAB;
 	
 		.settings{
 			padding: 50px 10px;
 			width:20%;
 			background-color: white;
 			border-radius: 5px;
-			margin: 10px;
 			margin: 25px;
+			box-shadow: 0px 0px 17px 4px #E8E8E8;
 
 		}
 		.draw{
@@ -97,13 +116,46 @@ input {
 
 }
 
+label{
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+input{
+	padding: 8px;
+	width: 73%;
+	border: 0.5px solid rgb(13, 251, 251);
+	margin: 10px 5px;
+}
+
 button {
-	background-color: black; 
-	color: white; 
-	border: 1 px solid gray;
+	background-color: rgb(13, 251, 251); 
+	color: black; 
+	border: none;
+    padding: 10px 10px;
+    text-align: center;
+    margin: 10px 5px;
+    display: inline-block;
+    ox-shadow: 1px 2px 12px -5px #242424;
+	-webkit-box-shadow: 1px 2px 12px -5px #242424;
+	-moz-box-shadow: 1px 2px 12px -5px #242424;
+	-o-box-shadow: 1px 2px 12px -5px #242424;
+	
 }
 
 lable{
 	color: white;
+}
+
+footer {
+	background-color: black; 
+	color: white;
+	padding: 15px;
+	margin: 0;
+		p{
+		margin: 0;
+		font-weight: thin;
+		letter-spacing: 2px;
+		}
 }
 
