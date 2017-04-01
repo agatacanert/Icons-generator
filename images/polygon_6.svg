@@ -3,9 +3,7 @@
 <svg version="1.1" id="Warstwa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 70 70" style="enable-background:new 0 0 70 70;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#D42200;stroke-miterlimit:10;}
-	.st1{fill:#FFFFFF;}
-	.st2{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st0{fill:none;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
 </style>
-<polygon class="st2" points="49.4,10 20.6,10 6.1,35 20.6,60 49.4,60 63.9,35 "/>
+<path class="st0" d="M49.4,10H20.6L6.1,35l14.5,25h28.8l14.5-25L49.4,10z"/>
 </svg>

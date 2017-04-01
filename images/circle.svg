@@ -3,9 +3,8 @@
 <svg version="1.1" id="Warstwa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 70 70" style="enable-background:new 0 0 70 70;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#D42200;stroke-miterlimit:10;}
-	.st1{fill:#FFFFFF;}
-	.st2{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st0{fill:none;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
 </style>
-<circle class="st2" cx="35" cy="35" r="25"/>
+<title>generator ikon</title>
+<path class="st0" d="M60,35c0,13.8-11.2,25-25,25S10,48.8,10,35s11.2-25,25-25S60,21.2,60,35z"/>
 </svg>
