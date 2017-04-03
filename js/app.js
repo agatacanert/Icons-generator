@@ -42,7 +42,7 @@ fabric.loadSVGFromURL( src, function(objects, options) {
 });
 
 
-// funkcja odpwiedzialna za nadawanie wpełnienia z colorpickera
+// fill from colorpickera
 
 function setImageColor(element) {
 
@@ -58,7 +58,7 @@ function setImageColor(element) {
 
 var jscolor = document.getElementById("color");
 console.log(jscolor)
-// wywołanie funkcji odpowiedzlanej za wypełenienie elementu 
+
 jscolor.addEventListener('change', function()
 {
 	
@@ -66,7 +66,7 @@ jscolor.addEventListener('change', function()
 });
 
 
-// funkcja odpwiedzialna za nadawanie obrysu z colorpickera
+// stroke color from colorpicker
 function setStrokeColor(element) {
   		color = "#"+element.value;
   		var object = canvas.getActiveObject();
@@ -78,8 +78,7 @@ function setStrokeColor(element) {
     for (var i = 0; i < object.paths.length; i++) {
       object.paths[i].set({
         
-        stroke: color,
-        strokeWidth: 0.5
+        stroke: color
       });
     }
   }
@@ -87,7 +86,6 @@ function setStrokeColor(element) {
   	canvas.renderAll();
 	}
 
-// wywołanie funkcji odpowiedzlanej za obrys elementu 
 var stroke = document.getElementById("stroke");
 console.log(stroke)
 
@@ -97,11 +95,56 @@ stroke.addEventListener('change', function()
     setStrokeColor(this);
 });
 
+// stroke width from input
+function setStrokeWidth(element) {
+  		width = element.value;
+  		var object = canvas.getActiveObject();
+
+
+  		console.log(width)    
+ console.log(object)
+ if (object.paths) {
+    for (var i = 0; i < object.paths.length; i++) {
+      object.paths[i].set({
+        
+        
+        strokeWidth: width
+      });
+    }
+  }
+	 
+  	canvas.renderAll();
+	}
 
 
 
-var strokeWidth =document.getElementById("width").value;
+var strokeWidth =document.getElementById("width");
 console.log(strokeWidth);
+
+strokeWidth.addEventListener('change', function()
+{
+	
+    setStrokeWidth(this);
+});
+
+
+
+
+var removeStroke =document.getElementById("remove_stroke");
+console.log(removeStroke);
+
+removeStroke.addEventListener("click", function(){
+	var object = canvas.getActiveObject();
+	if (object.paths) {
+    for (var i = 0; i < object.paths.length; i++) {
+      object.paths[i].set({
+
+        strokeWidth: 10
+      });
+    }
+  }
+  console.log(object);
+});
 
 
 
