@@ -1,4 +1,4 @@
-//@import '../bower_components/bootstrap/less/bootstrap.less';
+
 
 body {
 	
@@ -53,15 +53,19 @@ input {
 		}
 }
 
+
+
 .shapes{
+	 
 	padding: 20px 10px;
-	
-	
+		
 		div{
 		.draggable{
 			width: 97%;
 			margin: 0 auto;
 		}
+
+
 
 		button{
 			background-color: rgb(13, 251, 251); 
@@ -111,10 +115,14 @@ input {
 		}
 }
 
+
+
+
+
 .main{
 	display: flex;
 	align-items: start;
-	height: 70%; 
+	height: 70vh; 
 	background-color: white;
 	box-shadow: inset 0px 0px 40px 0px #bfbfbf;
 	-webkit-box-shadow: inset 0px 0px 40px 0px #bfbfbf;

@@ -129,21 +129,18 @@ strokeWidth.addEventListener('change', function()
 
 
 
-
 var removeStroke =document.getElementById("remove_stroke");
 console.log(removeStroke);
 
-removeStroke.addEventListener("click", function(){
-	var object = canvas.getActiveObject();
-	if (object.paths) {
+removeStroke.addEventListener('click', function() {
+  if (object.paths) {
     for (var i = 0; i < object.paths.length; i++) {
       object.paths[i].set({
-
-        strokeWidth: 10
+        strokeWidth: 0
       });
     }
   }
-  console.log(object);
+  canvas.renderAll();
 });
 
 
