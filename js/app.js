@@ -116,6 +116,15 @@ function setStrokeWidth(element) {
   	canvas.renderAll();
 	}
 
+var strokeWidth =document.getElementById("width");
+ console.log(strokeWidth);
+ 
+ strokeWidth.addEventListener('change', function()
+ {
+ 	
+     setStrokeWidth(this);
+ });
+
 
 
 var removeStroke =document.getElementById("remove_stroke");
