@@ -118,30 +118,22 @@ function setStrokeWidth(element) {
 
 
 
-var strokeWidth =document.getElementById("width");
-console.log(strokeWidth);
-
-strokeWidth.addEventListener('change', function()
-{
-	
-    setStrokeWidth(this);
-});
-
-
-
 var removeStroke =document.getElementById("remove_stroke");
-console.log(removeStroke);
-
-removeStroke.addEventListener('click', function() {
-  if (object.paths) {
-    for (var i = 0; i < object.paths.length; i++) {
-      object.paths[i].set({
-        strokeWidth: 0
-      });
-    }
-  }
-  canvas.renderAll();
-});
+ console.log(removeStroke);
+ 
+ removeStroke.addEventListener("click", function(){
+ 	var object = canvas.getActiveObject();
+ 	if (object.paths) {
+     for (var i = 0; i < object.paths.length; i++) {
+       object.paths[i].set({
+ 
+         strokeWidth: 0
+       });
+     }
+   }
+   console.log(object);
+    canvas.renderAll();
+ });
 
 
 
